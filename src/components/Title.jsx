@@ -1,9 +1,11 @@
-import React from 'react'
+const Title = ({ content }) => {
+  const titleContent = content.map((titleElement) => (
+    <span className={titleElement.classes} key={titleElement.text}>
+      {titleElement.text}
+    </span>
+  ));
 
-const Title = () => {
-  return (
-    <div>Title</div>
-  )
-}
+  return <h1 className="title">{titleContent}</h1>;
+};
 
-export default Title
+export default Title;

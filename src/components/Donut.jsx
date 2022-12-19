@@ -1,9 +1,19 @@
-import React from 'react'
+const Donut = ({ donutImage, classes, handleClick, donutId }) => {
+  if (!handleClick) {
+    handleClick = (e) => {
+      e.preventDefault();
+    };
+  }
 
-const Donut = () => {
   return (
-    <div>Donut</div>
-  )
-}
+    <img
+      src={donutImage}
+      alt=""
+      className={classes + " drop-shadow"}
+      onClick={(event) => handleClick(event)}
+      data-donut-id={donutId}
+    />
+  );
+};
 
-export default Donut
+export default Donut;
